@@ -62,6 +62,7 @@ h1 {
     list-style-type: none;
 }
 
+/* Style for individual to-do items */
 .todo-item {
     background-color: #f6f6f6;
     padding: 10px;
@@ -71,6 +72,7 @@ h1 {
     align-items: center;
     margin-bottom: 10px;
     transition: transform 0.2s ease;
+    animation: fadeIn 0.3s ease-in;
 }
 
 .todo-item:hover {
@@ -89,4 +91,41 @@ h1 {
 
 .delete-btn:hover {
     background-color: #ff4757;
+}
+
+/* Completed task style */
+.completed {
+    text-decoration: line-through;
+    color: #b2b2b2;
+}
+
+/* Clear All button style */
+.clear-all-btn {
+    padding: 8px 15px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.clear-all-btn:hover {
+    background-color: #ff4757;
+}
+
+/* Animations for adding and removing items */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.todo-item.removed {
+    animation: fadeOut 0.3s ease-out;
 }
